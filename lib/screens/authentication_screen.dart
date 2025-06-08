@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_screen.dart';
+
 class AuthenticationScreen extends StatelessWidget {
   const AuthenticationScreen({super.key});
 
@@ -33,12 +35,24 @@ class AuthenticationScreen extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   minimumSize: Size(307, 45),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6),
+                  ),
                 ),
                 child: Text(
                   'Log in',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return LoginScreen();
+                      },
+                    ),
+                  );
+                },
               ),
               SizedBox(height: 35),
               Text(
