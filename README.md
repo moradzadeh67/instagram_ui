@@ -1,7 +1,6 @@
 # instagram_ui
 
-A new Flutter project.
-
+این برنامه برای شبیه سازی پیکسل ۹ ساخته شده که ۷ اینجی هست
 ## Getting Started
 
 This project is a starting point for a Flutter application.
