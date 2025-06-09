@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_ui/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,9 +24,43 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) => PostWidget(),
               ),
             ),
+            BottomNavigationBar(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class BottomNavigationBar extends StatelessWidget {
+  const BottomNavigationBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Icon(Icons.home, color: Colors.white, size: 30),
+        Icon(Icons.search, color: Colors.white, size: 30),
+        Icon(Icons.add_box_outlined, color: Colors.white, size: 30),
+        Icon(Icons.favorite, color: Colors.white, size: 30),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfileScreen()),
+            );
+          },
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(100.0),
+            child: Image.asset(
+              'assets/images/img_2.png',
+              width: 35,
+              height: 35,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
